@@ -15,7 +15,7 @@ export default class List extends Component {
     }
     
     componentDidMount(){
-        fetch("/get/tasks")
+        fetch("https://api-notask.herokuapp.com/get/tasks")
         .then(response => response.json())
         .then(
             (result)=>{
@@ -35,7 +35,7 @@ export default class List extends Component {
 
     clickDelete(event){
         var request = {id: event.currentTarget.id}
-        axios.post("/delete/task", request)
+        axios.post("https://api-notask.herokuapp.com/delete/task", request)
             .then(response => {
                 this.setState({
                     items: response.data.tasks

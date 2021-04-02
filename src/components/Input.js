@@ -24,7 +24,7 @@ formChange(event){
     
 clickSubmit(event){
     event.preventDefault();
-    axios.post("/create/task", this.state)
+    axios.post("https://api-notask.herokuapp.com/create/task", this.state)
         .then(response => {
             this.setState({
                 submit: response.data,
